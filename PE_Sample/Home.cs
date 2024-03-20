@@ -26,14 +26,14 @@ namespace PresentationLayer
 
         private void btnLinkMember_Click(object sender, EventArgs e)
         {
-            
-                ManagerMember managerMember = new ManagerMember();
-                managerMember.ShowDialog();
-                Close();
-            
+
+            ManagerMember managerMember = new ManagerMember();
+            managerMember.ShowDialog();
+            Close();
+
         }
 
-        private void btnLinkPet_Click(object sender, EventArgs e)
+        private void btnLinkCafe_Click(object sender, EventArgs e)
         {
             ManagerCafe managerPet = new ManagerCafe();
             managerPet.ShowDialog();
@@ -49,18 +49,22 @@ namespace PresentationLayer
 
         private void adminRene_Click(object sender, EventArgs e)
         {
-            Member member = new Member();
-            if (member.Role != 1)
-            {
-               adminRene.Visible = false;
-            }
-            else
+           /* MemberDAO member = new MemberDAO();
+            adminRene.Visible = true;
+            if (member.GetMemberById. == 1)
             {
                 adminRene.Visible = true;
                 Home home = new Home();
                 home.ShowDialog();
                 Close();
             }
+            else
+            {
+                adminRene.Visible = false;
+                
+            }*/
         }
+
+
     }
 }

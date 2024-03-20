@@ -49,6 +49,7 @@ E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLaye
 E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
 E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
 E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLayer.sourcelink.json
 E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLayer.dll
 E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\refint\RepositoryLayer.dll
 E:\PRN301\ProjectPRN211\ProjectPRN211\Repository\obj\Debug\net6.0\RepositoryLayer.pdb

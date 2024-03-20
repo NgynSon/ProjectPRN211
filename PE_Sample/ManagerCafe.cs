@@ -26,9 +26,9 @@ namespace PresentationLayer
             cateComboBox.DataSource = lists;
 
             CafeDAO cafeDAO = new CafeDAO();
-            List<Cafe> pets = cafeDAO.GetAllCafes();
+            List<Cafe> cafes = cafeDAO.GetAllCafes();
 
-            cafeDataGridView.DataSource = pets;
+            cafeDataGridView.DataSource = cafes;
             if (cafeDataGridView.Columns["Bills"] != null)
             {
                 cafeDataGridView.Columns["Bills"].Visible = false;
@@ -56,7 +56,7 @@ namespace PresentationLayer
             CafeDAO petDAO = new CafeDAO();
             if (!petDAO.IsCafeNameUnique(cafeName))
             {
-                MessageBox.Show("Pet name already exists. Please choose a different name.");
+                MessageBox.Show("Cafe name already exists. Please choose a different name.");
                 return;
             }
             Cafe cafe = new Cafe()
@@ -91,25 +91,11 @@ namespace PresentationLayer
             cafePriceBox.Value = 1;
             cafeDecription.Text = string.Empty;
             CafeDAO cafeDAO = new CafeDAO();
-            List<Cafe> pets = cafeDAO.GetAllCafes();
-            cafeDataGridView.DataSource = pets;
+            List<Cafe> cafes = cafeDAO.GetAllCafes();
+            cafeDataGridView.DataSource = cafes;
 
         }
-        private void ViewPetData(object sender, DataGridViewCellEventArgs e)
-        {
-            var currentRow = e.RowIndex;
-            CafeDAO cafeDAO = new CafeDAO();
-            var cafees = cafeDAO.GetAllCafes();
-            var cafe = cafees[currentRow];
-            idCafeBox.Text = cafe.CaId.ToString();
-            nameCafeBox.Text = cafe.CafeName;
-            cafeDateImport.Value = (DateTime)cafe.ImportDate;
-            cateComboBox.Text = cafe.CateId.ToString();
-            cafePriceBox.Text = cafe.Price.ToString();
-            quantityInput.Text = cafe.Quantity.ToString();
-            cafeDecription.Text = cafe.Description;
-
-        }
+       
 
         private void btnEditPet_Click(object sender, EventArgs e)
         {
@@ -215,7 +201,7 @@ namespace PresentationLayer
             idCafeBox.Text = cafe.CaId.ToString();
             nameCafeBox.Text = cafe.CafeName;
             cafeDateImport.Value = (DateTime)cafe.ImportDate;
-            cateComboBox.Text = cafe.Cate.ToString();
+            cateComboBox.Text = cafe.CateId.ToString();
             quantityInput.Text = cafe.Quantity.ToString();
             cafePriceBox.Text = cafe.Quantity.ToString();
             cafeDecription.Text = cafe.Description.ToString();

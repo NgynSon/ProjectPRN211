@@ -32,7 +32,7 @@
             exit = new Label();
             label1 = new Label();
             btnLinkMember = new Button();
-            btnLinkPet = new Button();
+            btnLinkCafe = new Button();
             btnLinkCate = new Button();
             adminRene = new Button();
             panel1.SuspendLayout();
@@ -88,18 +88,18 @@
             btnLinkMember.UseVisualStyleBackColor = false;
             btnLinkMember.Click += btnLinkMember_Click;
             // 
-            // btnLinkPet
+            // btnLinkCafe
             // 
-            btnLinkPet.BackColor = Color.Black;
-            btnLinkPet.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            btnLinkPet.ForeColor = Color.White;
-            btnLinkPet.Location = new Point(317, 268);
-            btnLinkPet.Name = "btnLinkPet";
-            btnLinkPet.Size = new Size(148, 68);
-            btnLinkPet.TabIndex = 5;
-            btnLinkPet.Text = "Manager Cafe";
-            btnLinkPet.UseVisualStyleBackColor = false;
-            btnLinkPet.Click += btnLinkPet_Click;
+            btnLinkCafe.BackColor = Color.Black;
+            btnLinkCafe.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            btnLinkCafe.ForeColor = Color.White;
+            btnLinkCafe.Location = new Point(317, 268);
+            btnLinkCafe.Name = "btnLinkCafe";
+            btnLinkCafe.Size = new Size(148, 68);
+            btnLinkCafe.TabIndex = 5;
+            btnLinkCafe.Text = "Manager Cafe";
+            btnLinkCafe.UseVisualStyleBackColor = false;
+            btnLinkCafe.Click += btnLinkCafe_Click;
             // 
             // btnLinkCate
             // 
@@ -125,6 +125,7 @@
             adminRene.TabIndex = 7;
             adminRene.Text = "Admin Revenue";
             adminRene.UseVisualStyleBackColor = false;
+            adminRene.Visible = false;
             adminRene.Click += adminRene_Click;
             // 
             // Home
@@ -135,7 +136,7 @@
             ClientSize = new Size(985, 580);
             Controls.Add(adminRene);
             Controls.Add(btnLinkCate);
-            Controls.Add(btnLinkPet);
+            Controls.Add(btnLinkCafe);
             Controls.Add(btnLinkMember);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -153,7 +154,7 @@
         private Label exit;
         private Label label1;
         private Button btnLinkMember;
-        private Button btnLinkPet;
+        private Button btnLinkCafe;
         private Button btnLinkCate;
         private Button adminRene;
     }

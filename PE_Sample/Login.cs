@@ -34,6 +34,7 @@ namespace PresentationLayer
             MemberDAO dao = new MemberDAO();
             Member mem = dao.Login(email, password);
 
+
             if (mem == null)
             {
                 MessageBox.Show("Your account password is not correct, please re-enter");
@@ -50,7 +51,7 @@ namespace PresentationLayer
                 this.Hide();
                 Home home = new Home();
                 home.ShowDialog();
-                
+
             }
             else
             {

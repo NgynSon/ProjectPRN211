@@ -123,7 +123,7 @@
             // 
             TotalPet.AutoSize = true;
             TotalPet.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            TotalPet.Location = new Point(101, 58);
+            TotalPet.Location = new Point(50, 58);
             TotalPet.Name = "TotalPet";
             TotalPet.Padding = new Padding(18, 20, 18, 20);
             TotalPet.Size = new Size(95, 65);
@@ -145,7 +145,7 @@
             // 
             totalMember.AutoSize = true;
             totalMember.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            totalMember.Location = new Point(101, 55);
+            totalMember.Location = new Point(49, 55);
             totalMember.Name = "totalMember";
             totalMember.Padding = new Padding(18, 20, 18, 20);
             totalMember.Size = new Size(95, 65);
@@ -178,7 +178,7 @@
             // 
             totalRevenue.AutoSize = true;
             totalRevenue.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            totalRevenue.Location = new Point(101, 52);
+            totalRevenue.Location = new Point(53, 52);
             totalRevenue.Name = "totalRevenue";
             totalRevenue.Padding = new Padding(18, 20, 18, 20);
             totalRevenue.Size = new Size(95, 65);

@@ -84,6 +84,13 @@ namespace RepositoryLayer.DAOs
         {
             return _context.Members.Count();
         }
+        public Member GetMemberById(int memberId)
+        {
+            using (var context = new CafeShopDbContext()) // Replace YourDbContext with your actual DbContext
+            {
+                return context.Members.FirstOrDefault(m => m.MemberId == memberId);
+            }
+        }
     }
     
 }
