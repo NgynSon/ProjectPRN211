@@ -50,6 +50,7 @@ namespace PresentationLayer
             {
                 this.Hide();
                 Home home = new Home();
+                
                 home.ShowDialog();
 
             }

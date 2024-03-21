@@ -125,7 +125,6 @@
             adminRene.TabIndex = 7;
             adminRene.Text = "Admin Revenue";
             adminRene.UseVisualStyleBackColor = false;
-            adminRene.Visible = false;
             adminRene.Click += adminRene_Click;
             // 
             // Home

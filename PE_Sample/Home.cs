@@ -14,10 +14,14 @@ namespace PresentationLayer
 {
     public partial class Home : Form
     {
+        private int userRole;
         public Home()
         {
             InitializeComponent();
+           
         }
+        
+        
 
         private void exit_Click(object sender, EventArgs e)
         {
@@ -47,22 +51,15 @@ namespace PresentationLayer
             Close();
         }
 
+
         private void adminRene_Click(object sender, EventArgs e)
         {
-           /* MemberDAO member = new MemberDAO();
-            adminRene.Visible = true;
-            if (member.GetMemberById. == 1)
-            {
-                adminRene.Visible = true;
-                Home home = new Home();
-                home.ShowDialog();
-                Close();
-            }
-            else
-            {
-                adminRene.Visible = false;
-                
-            }*/
+
+            Admin admin = new Admin();
+            admin.ShowDialog();
+            Close();
+
+
         }
 
 
