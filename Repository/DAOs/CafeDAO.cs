@@ -1,4 +1,5 @@
-﻿using RepositoryLayer.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using RepositoryLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace RepositoryLayer.DAOs
         public List<Cafe> GetAllCafes()
         {
             return _context.Cafes.ToList();
+            /*var cafes = _context.Cafes.Include(cafe => cafe.Cate).ToList();
+            return cafes;*/
         }
 
         public List<Cafe> GetCafesBySearch(string Value)

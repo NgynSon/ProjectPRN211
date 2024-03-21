@@ -118,11 +118,11 @@ namespace PresentationLayer
                 var deleteResult = category.Remove(category1);
                 if (deleteResult)
                 {
-                    MessageBox.Show("Pet deleted successfully!");
+                    MessageBox.Show("Cafe category deleted successfully!");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to delete Pet!");
+                    MessageBox.Show("Failed to delete category!");
                 }
             }
         }

@@ -44,7 +44,7 @@ namespace PresentationLayer
                 this.Hide();
                 Admin admin = new Admin((int)mem.Role);
                 admin.ShowDialog();
-                admin.Show();
+ 
 
             }
             else if (mem.Role == 2)

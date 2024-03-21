@@ -19,7 +19,7 @@ namespace PresentationLayer
             InitializeComponent();
 
             CafeDAO cafe = new CafeDAO();
-            List<Cafe> pets = cafe.GetAllCafes();
+            var pets = cafe.GetAllCafes();
             viewPetInShop.DataSource = pets;
             if (viewPetInShop.Columns["Bills"] != null)
             {

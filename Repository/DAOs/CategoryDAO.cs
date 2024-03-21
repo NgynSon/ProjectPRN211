@@ -16,13 +16,13 @@ namespace RepositoryLayer.DAOs
             _context = new CafeShopDbContext();
         }
 
-        public List<int> GetCategoryId()
+        public List<Category> GetCategoryId()
         {
-            List<int> categoryIds = _context.Categories
-                .Select(category => category.CateId)
+            List<Category> categories = _context.Categories
+                .Select(category => new Category {CateId = category.CateId, CateName = category.CateName })
                 .ToList();
 
-            return categoryIds;
+            return categories;
         }
 
         public List<Category> GetAllCategories()

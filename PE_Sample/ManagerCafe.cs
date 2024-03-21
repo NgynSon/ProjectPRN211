@@ -24,11 +24,13 @@ namespace PresentationLayer
             this.userRole = role;
 
             CategoryDAO categoryDAO = new CategoryDAO();
-            var lists = categoryDAO.GetCategoryId();
+            List<Category> lists = categoryDAO.GetCategoryId();
             cateComboBox.DataSource = lists;
+            cateComboBox.DisplayMember = "CateName";
+            cateComboBox.ValueMember = "CateId";
 
             CafeDAO cafeDAO = new CafeDAO();
-            List<Cafe> cafes = cafeDAO.GetAllCafes();
+            var cafes = cafeDAO.GetAllCafes();
 
             cafeDataGridView.DataSource = cafes;
             if (cafeDataGridView.Columns["Bills"] != null)
@@ -103,7 +105,7 @@ namespace PresentationLayer
             cafePriceBox.Value = 1;
             cafeDecription.Text = string.Empty;
             CafeDAO cafeDAO = new CafeDAO();
-            List<Cafe> cafes = cafeDAO.GetAllCafes();
+            var cafes = cafeDAO.GetAllCafes();
             cafeDataGridView.DataSource = cafes;
 
         }
@@ -165,17 +167,17 @@ namespace PresentationLayer
 
             CafeDAO petDAO = new CafeDAO();
 
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this Pet?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this Cafe?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 var deleteResult = petDAO.Remove(cafe);
                 if (deleteResult)
                 {
-                    MessageBox.Show("Pet deleted successfully!");
+                    MessageBox.Show("Cafe deleted successfully!");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to delete Pet!");
+                    MessageBox.Show("Failed to delete Cafe!");
                 }
             }
         }
@@ -213,7 +215,7 @@ namespace PresentationLayer
             idCafeBox.Text = cafe.CaId.ToString();
             nameCafeBox.Text = cafe.CafeName;
             cafeDateImport.Value = (DateTime)cafe.ImportDate;
-            cateComboBox.Text = cafe.CateId.ToString();
+            cateComboBox.SelectedValue = cafe.CateId;
             quantityInput.Text = cafe.Quantity.ToString();
             cafePriceBox.Text = cafe.Quantity.ToString();
             cafeDecription.Text = cafe.Description.ToString();
