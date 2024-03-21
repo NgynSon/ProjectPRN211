@@ -42,15 +42,15 @@ namespace PresentationLayer
             else if (mem.Role == 1)
             {
                 this.Hide();
-                Admin admin = new Admin();
+                Admin admin = new Admin((int)mem.Role);
                 admin.ShowDialog();
+                admin.Show();
 
             }
             else if (mem.Role == 2)
             {
                 this.Hide();
-                Home home = new Home();
-                
+                Home home = new Home((int)mem.Role);              
                 home.ShowDialog();
 
             }

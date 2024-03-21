@@ -15,9 +15,11 @@ namespace PresentationLayer
 {
     public partial class ManagerMember : Form
     {
-        public ManagerMember()
+        private int userRole;
+        public ManagerMember(int role)
         {
             InitializeComponent();
+            this.userRole = role;
             MemberDAO memberDAO = new MemberDAO();
             List<Member> members = memberDAO.GetAllMembers();
 
@@ -197,7 +199,7 @@ namespace PresentationLayer
 
         private void btnMemberHome_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(userRole);
             home.ShowDialog();
             this.Close();
         }

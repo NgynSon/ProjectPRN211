@@ -17,9 +17,11 @@ namespace PresentationLayer
     public partial class ManagerCafe : Form
     {
         public int CaId { get; set; }
-        public ManagerCafe()
+        private int userRole;
+        public ManagerCafe(int role)
         {
             InitializeComponent();
+            this.userRole = role;
 
             CategoryDAO categoryDAO = new CategoryDAO();
             var lists = categoryDAO.GetCategoryId();
@@ -36,6 +38,16 @@ namespace PresentationLayer
             if (cafeDataGridView.Columns["Cate"] != null)
             {
                 cafeDataGridView.Columns["Cate"].Visible = false;
+            }
+            if (userRole == 1)
+            {
+                btnAddPet.Visible = true;
+                btnRemovePet.Visible = true;
+            }
+            else
+            {
+                btnAddPet.Visible = false;
+                btnRemovePet.Visible = false;
             }
         }
 
@@ -95,7 +107,7 @@ namespace PresentationLayer
             cafeDataGridView.DataSource = cafes;
 
         }
-       
+
 
         private void btnEditPet_Click(object sender, EventArgs e)
         {
@@ -170,14 +182,14 @@ namespace PresentationLayer
 
         private void btnCafeHome_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(userRole);
             home.ShowDialog();
             Close();
         }
 
         private void cafeLinkCate_Click(object sender, EventArgs e)
         {
-            MangerCate mangerCate = new MangerCate();
+            MangerCate mangerCate = new MangerCate(userRole);
             mangerCate.ShowDialog();
         }
 

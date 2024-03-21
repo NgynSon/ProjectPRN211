@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnLogout = new Button();
             exit = new Label();
             label1 = new Label();
             btnLinkMember = new Button();
@@ -41,6 +42,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(btnLogout);
             panel1.Controls.Add(exit);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -49,6 +51,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(985, 100);
             panel1.TabIndex = 3;
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.Black;
+            btnLogout.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(910, 65);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(75, 35);
+            btnLogout.TabIndex = 62;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // exit
             // 
@@ -156,5 +171,6 @@
         private Button btnLinkCafe;
         private Button btnLinkCate;
         private Button adminRene;
+        private Button btnLogout;
     }
 }

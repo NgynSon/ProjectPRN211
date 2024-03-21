@@ -14,10 +14,11 @@ namespace PresentationLayer
 {
     public partial class MangerCate : Form
     {
-        public MangerCate()
+        private int userRole;
+        public MangerCate(int role)
         {
             InitializeComponent();
-
+            this.userRole = role;
             CategoryDAO categoryDAO = new CategoryDAO();
             List<Category> categories = categoryDAO.GetAllCategories();
 
@@ -25,6 +26,16 @@ namespace PresentationLayer
             if (cateDataGridView.Columns["Cafes"] != null)
             {
                 cateDataGridView.Columns["Cafes"].Visible = false;
+            }
+            if (userRole == 1)
+            {
+                btnDelateCate.Visible = true;
+                btnAddCate.Visible = true;
+            }
+            else
+            {
+                btnDelateCate.Visible = false;
+                btnAddCate.Visible = false;
             }
         }
 
@@ -127,7 +138,7 @@ namespace PresentationLayer
 
         private void btnCateHome_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(userRole);
             home.ShowDialog();
             Close();
         }

@@ -16,9 +16,11 @@ namespace PresentationLayer
         private CafeDAO cafeDAO;
         private MemberDAO memberDAO;
         private BillDAO billDAO;
-        public Admin()
+        private int userRole;
+        public Admin(int role)
         {
             InitializeComponent();
+            this.userRole = role;
             cafeDAO = new CafeDAO(); // Initialize the PetDAO instance
             UpdateTotalPetsLabel();
             memberDAO = new MemberDAO(); // Initialize the MemberDAO instance
@@ -56,7 +58,7 @@ namespace PresentationLayer
         private void btnMemberHome_Click(object sender, EventArgs e)
         {
 
-            Home home = new Home();
+            Home home = new Home(userRole);
             home.ShowDialog();
         }
 

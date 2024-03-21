@@ -15,13 +15,23 @@ namespace PresentationLayer
     public partial class Home : Form
     {
         private int userRole;
-        public Home()
+
+        public Home(int role)
         {
             InitializeComponent();
-           
+            this.userRole = role;
+            if (userRole == 1)
+            {
+                adminRene.Visible = true;
+                btnLinkMember.Visible = true;
+            }
+            else
+            {
+                adminRene.Visible = false;
+                btnLinkMember.Visible = false;
+            }
+
         }
-        
-        
 
         private void exit_Click(object sender, EventArgs e)
         {
@@ -31,37 +41,44 @@ namespace PresentationLayer
         private void btnLinkMember_Click(object sender, EventArgs e)
         {
 
-            ManagerMember managerMember = new ManagerMember();
+            ManagerMember managerMember = new ManagerMember(userRole);
             managerMember.ShowDialog();
-            Close();
+            this.Close();
 
         }
 
         private void btnLinkCafe_Click(object sender, EventArgs e)
         {
-            ManagerCafe managerPet = new ManagerCafe();
+            ManagerCafe managerPet = new ManagerCafe(userRole);
             managerPet.ShowDialog();
-            Close();
+            this.Close();
         }
 
         private void btnLinkCate_Click(object sender, EventArgs e)
         {
-            MangerCate managerCate = new MangerCate();
+            MangerCate managerCate = new MangerCate(userRole);
             managerCate.ShowDialog();
-            Close();
+            this.Close();
         }
 
 
         private void adminRene_Click(object sender, EventArgs e)
         {
 
-            Admin admin = new Admin();
+            Admin admin = new Admin(userRole);
             admin.ShowDialog();
-            Close();
+            this.Close();
 
 
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
 
+            /*Login login = new Login();
+            login.ShowDialog();
+            this.Close();*/
+            Application.Restart();
+        }
     }
 }
